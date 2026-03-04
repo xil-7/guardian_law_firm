@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Law Firm | Solusi Hukum Bisnis Strategis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #020617; 
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-navy-deep { background-color: #020617; }
+        .bg-navy-muted { background-color: #0f172a; }
+        .bg-navy-light { background-color: #1e293b; }
+        .text-gold { color: #c5a059; }
+        .bg-gold { background-color: #c5a059; }
+        .border-gold { border-color: #c5a059; }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-dark {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-dark:hover {
+            transform: translateY(-12px);
+            border-color: #c5a059;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-gold {
+            background-color: #c5a059;
+            color: #020617;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-gold:hover {
+            background-color: #e2bd7e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(197, 160, 89, 0.4);
+        }
+
+        .input-dark {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            color: white;
+        }
+
+        /* Diagnostic Question Styling */
+        .diag-row {
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            padding: 2rem 0;
+            transition: all 0.3s ease;
+        }
+        .diag-row:hover {
+            background: rgba(197, 160, 89, 0.03);
+        }
+        .btn-check {
+            width: 90px;
+            padding: 0.6rem;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            color: #c5a059;
+        }
+        .btn-check.active {
+            background: #c5a059;
+            color: #020617;
+        }
+
+        .floating-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 bg-navy-deep/90 backdrop-blur-lg border-b border-slate-800 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-gold p-2 rounded shadow-lg">
+                        <i class="fas fa-gavel text-xl text-navy-deep"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-white uppercase">Guardian <span class="text-gold">Law Firm</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-semibold text-xs uppercase tracking-widest">
+                    <a href="#home" class="hover:text-gold transition text-slate-300">Home</a>
+                    <a href="#diagnostic" class="hover:text-gold transition text-slate-300">Diagnosis</a>
+                    <a href="#services" class="hover:text-gold transition text-slate-300">Services</a>
+                    <a href="#contact" class="hover:text-gold transition text-slate-300">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="btn-gold px-7 py-2.5 rounded font-bold uppercase tracking-widest text-xs">Consultation</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 relative">
+        <div class="floating-logo">
+            <i class="fas fa-balance-scale text-gold text-xl"></i>
+            <span class="text-white font-bold text-sm tracking-widest uppercase">Guardian <span class="text-gold">Firm</span></span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center relative z-10">
+            <div class="inline-block px-4 py-1 border border-gold/30 rounded-full mb-6 bg-gold/5">
+                <span class="text-gold text-xs font-bold uppercase tracking-[0.3em]">Business Legal Excellence</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-tight text-white">
+                Solusi Hukum <br><span class="text-gold italic">Efisien & Strategis</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Kami melindungi aset Anda dengan integritas tinggi, memastikan setiap langkah bisnis memiliki landasan hukum yang kokoh.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#diagnostic" class="btn-gold px-12 py-5 rounded font-bold uppercase tracking-widest text-sm shadow-2xl">Mulai Diagnosis</a>
+                <a href="#services" class="bg-transparent border-2 border-gold/50 text-gold hover:bg-gold/10 px-12 py-5 rounded font-bold uppercase tracking-widest text-sm transition">Paket Layanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostic Section -->
+    <section id="diagnostic" class="py-32 bg-navy-muted">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 italic text-center">Business Health Diagnosis</h2>
+                <p class="text-gold tracking-widest text-sm uppercase font-bold text-center">Audit Mandiri Risiko Hukum Anda</p>
+            </div>
+            
+            <div class="bg-navy-deep p-8 md:p-16 rounded-2xl border border-gold/20 shadow-2xl">
+                <!-- Question 1 -->
+                <div class="diag-row flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="max-w-2xl text-left">
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs mb-2">1. Licensing Risk</h4>
+                        <p class="text-lg text-slate-300 font-light">Have you reviewed your business licenses (NIB, operational permits, sectoral permits) within the last 12 months to ensure they are still valid and compliant?</p>
+                    </div>
+                    <div class="flex gap-4 shrink-0" data-q="licensing">
+                        <button type="button" onclick="handleChoice(this, 'YES')" class="btn-check rounded">YES</button>
+                        <button type="button" onclick="handleChoice(this, 'NO')" class="btn-check rounded">NO</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="diag-row flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="max-w-2xl text-left">
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs mb-2">2. Food Safety Compliance</h4>
+                        <p class="text-lg text-slate-300 font-light">Do you have documented SOPs for food handling, storage temperature, sanitation, and employee hygiene that are regularly updated?</p>
+                    </div>
+                    <div class="flex gap-4 shrink-0" data-q="food_safety">
+                        <button type="button" onclick="handleChoice(this, 'YES')" class="btn-check rounded">YES</button>
+                        <button type="button" onclick="handleChoice(this, 'NO')" class="btn-check rounded">NO</button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="diag-row flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="max-w-2xl text-left">
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs mb-2">3. Inspection Preparedness</h4>
+                        <p class="text-lg text-slate-300 font-light">If a surprise inspection from local authorities occurred tomorrow, are you 100% confident you would pass without warnings or sanctions?</p>
+                    </div>
+                    <div class="flex gap-4 shrink-0" data-q="inspection">
+                        <button type="button" onclick="handleChoice(this, 'YES')" class="btn-check rounded">YES</button>
+                        <button type="button" onclick="handleChoice(this, 'NO')" class="btn-check rounded">NO</button>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="diag-row flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="max-w-2xl text-left">
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs mb-2">4. Supplier & Liability</h4>
+                        <p class="text-lg text-slate-300 font-light">Do you have written contracts with suppliers clearly allocating liability for contaminated or defective products?</p>
+                    </div>
+                    <div class="flex gap-4 shrink-0" data-q="supplier">
+                        <button type="button" onclick="handleChoice(this, 'YES')" class="btn-check rounded">YES</button>
+                        <button type="button" onclick="handleChoice(this, 'NO')" class="btn-check rounded">NO</button>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="diag-row flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-none">
+                    <div class="max-w-2xl text-left">
+                        <h4 class="text-gold font-bold uppercase tracking-widest text-xs mb-2">5. Complaint Protection</h4>
+                        <p class="text-lg text-slate-300 font-light">If a customer claims food poisoning or hygiene-related harm, do you have a legal response protocol in place?</p>
+                    </div>
+                    <div class="flex gap-4 shrink-0" data-q="complaint">
+                        <button type="button" onclick="handleChoice(this, 'YES')" class="btn-check rounded">YES</button>
+                        <button type="button" onclick="handleChoice(this, 'NO')" class="btn-check rounded">NO</button>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center pt-10 border-t border-slate-800">
+                    <p id="risk-alert" class="hidden text-red-400 italic mb-8 max-w-2xl mx-auto">Risiko Terdeteksi: Anda menjawab "NO" pada salah satu poin di atas. Bisnis Anda rentan secara hukum.</p>
+                    <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})" class="btn-gold px-12 py-4 rounded font-bold uppercase text-xs tracking-[0.2em] shadow-2xl">Amankan Bisnis Anda Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-navy-deep">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 italic">Layanan & Investasi</h2>
+                <p class="text-gold tracking-widest text-sm uppercase font-bold">Pilih Proteksi Sesuai Kebutuhan Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Package 1: Bronzer -->
+                <div class="card-dark p-12 rounded-lg flex flex-col text-left">
+                    <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-4">Bronzer Protection</h3>
+                    <p class="text-3xl font-bold text-white mb-8">IDR 2.5jt</p>
+                    <div class="h-px bg-slate-800 w-full mb-8"></div>
+                    <ul class="space-y-5 mb-12 text-slate-400 text-sm flex-grow">
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> 1 Konsultasi Strategis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Draft Kontrak Dasar (1 Dokumen)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Konsultasi BPOM & Halal Dasar</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> 1 Sesi Konsultasi Bersama</li>
+                    </ul>
+                    <a href="#contact" onclick="selectPackage('Bronzer Protection')" class="text-center py-4 border border-gold/40 text-gold font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-navy-deep transition">Pilih Bronzer</a>
+                </div>
+
+                <!-- Package 2: Silver (Featured) -->
+                <div class="bg-navy-muted p-12 rounded-lg flex flex-col relative transform md:scale-110 z-10 border-2 border-gold shadow-[0_0_60px_rgba(197,160,89,0.15)] text-left">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold text-navy-deep text-[10px] px-8 py-2 font-black uppercase tracking-[0.2em]">Direkomendasikan</div>
+                    <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-4">Silver Strategic</h3>
+                    <p class="text-4xl font-bold text-white mb-8">IDR 3.5jt</p>
+                    <div class="h-px bg-slate-700 w-full mb-8"></div>
+                    <ul class="space-y-5 mb-12 text-slate-300 text-sm flex-grow">
+                        <li class="flex items-center"><i class="fas fa-star text-gold mr-4 text-xs"></i> Legal Confession Session</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Review & Drafting Kontrak</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Konsultasi BPOM & Halal</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Saran Struktur Pajak</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> 2 Sesi Follow-up</li>
+                    </ul>
+                    <a href="#contact" onclick="selectPackage('Silver Strategic')" class="btn-gold text-center py-4 rounded font-bold uppercase tracking-widest text-xs shadow-xl">Pilih Silver</a>
+                </div>
+
+                <!-- Package 3: Diamond -->
+                <div class="card-dark p-12 rounded-lg flex flex-col text-left">
+                    <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-4">Diamond Elite</h3>
+                    <p class="text-3xl font-bold text-white mb-8">IDR 4.0jt</p>
+                    <div class="h-px bg-slate-800 w-full mb-8"></div>
+                    <ul class="space-y-5 mb-12 text-slate-400 text-sm flex-grow">
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Semua Fitur Paket Silver</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Audit Legal Bisnis Menyeluruh</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Pendampingan Lisensi Prioritas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gold mr-4 text-xs"></i> Dokumen Legalitas Lengkap</li>
+                    </ul>
+                    <a href="#contact" onclick="selectPackage('Diamond Elite')" class="text-center py-4 border border-gold/40 text-gold font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-navy-deep transition">Pilih Diamond</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-navy-deep relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-muted rounded-2xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6)] flex flex-col md:flex-row">
+                
+                <!-- Info Side -->
+                <div class="md:w-5/12 p-8 md:p-16 bg-navy-light text-white flex flex-col">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white italic mb-10 leading-tight text-left">Hubungi <br><span class="text-gold">Guardian</span></h2>
+                    <div class="space-y-8 text-left mb-10">
+                        <div class="flex items-center space-x-5">
+                            <div class="w-10 h-10 flex items-center justify-center bg-gold/10 border border-gold/30 rounded">
+                                <i class="fas fa-phone-alt text-gold text-sm"></i>
+                            </div>
+                            <span class="text-slate-300 font-medium">+123-456-7890</span>
+                        </div>
+                        <div class="flex items-center space-x-5">
+                            <div class="w-10 h-10 flex items-center justify-center bg-gold/10 border border-gold/30 rounded shrink-0">
+                                <i class="fas fa-envelope text-gold text-sm"></i>
+                            </div>
+                            <span class="text-slate-300 font-medium text-xs break-all leading-tight">helloguardianlawfirm@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-white/5">
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Respon dalam 24 jam kerja</p>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="md:w-7/12 p-8 md:p-16">
+                    <!-- ACTION: Masukkan ID Formspree Anda di f/xxxxxxx -->
+                    <form id="guardianForm" action="https://formspree.io/f/mwvnganq" method="POST" class="space-y-6 text-left">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase text-gold tracking-widest mb-2">Nama Anda</label>
+                                <input type="text" name="Nama" required class="input-dark w-full px-5 py-3 rounded text-sm focus:ring-1 focus:ring-gold outline-none" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase text-gold tracking-widest mb-2">Sektor Bisnis</label>
+                                <input type="text" name="Sektor" required class="input-dark w-full px-5 py-3 rounded text-sm focus:ring-1 focus:ring-gold outline-none" placeholder="F&B, Tech, dll">
+                            </div>
+                        </div>
+
+                        <!-- Data Diagnosis Hidden -->
+                        <input type="hidden" id="ans_licensing" name="Result_Licensing" value="Not Checked">
+                        <input type="hidden" id="ans_food_safety" name="Result_FoodSafety" value="Not Checked">
+                        <input type="hidden" id="ans_inspection" name="Result_Inspection" value="Not Checked">
+                        <input type="hidden" id="ans_supplier" name="Result_Supplier" value="Not Checked">
+                        <input type="hidden" id="ans_complaint" name="Result_Complaint" value="Not Checked">
+                        <input type="hidden" id="selected_package" name="Package_Choice" value="None">
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-gold tracking-widest mb-2">Email Aktif</label>
+                            <input type="email" name="_replyto" required class="input-dark w-full px-5 py-3 rounded text-sm focus:ring-1 focus:ring-gold outline-none" placeholder="email@anda.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase text-gold tracking-widest mb-2">Pesan Tambahan</label>
+                            <textarea name="Pesan" rows="4" class="input-dark w-full px-5 py-3 rounded text-sm focus:ring-1 focus:ring-gold outline-none resize-none" placeholder="Jelaskan kebutuhan hukum Anda..."></textarea>
+                        </div>
+
+                        <div id="form-status" class="hidden p-4 rounded bg-green-900/20 text-green-400 text-center text-xs">
+                            Pesan terkirim! Tim kami akan segera menghubungi Anda.
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn-gold w-full py-4 rounded font-black uppercase tracking-[0.2em] text-[11px] shadow-2xl">
+                            Kirim ke Tim Guardian
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-deep py-20 border-t-4 border-gold text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center space-x-3 mb-10">
+                <i class="fas fa-gavel text-gold text-3xl"></i>
+                <span class="text-3xl font-bold uppercase tracking-[0.4em] text-white">Guardian <span class="text-gold font-light">Law Firm</span></span>
+            </div>
+            <p class="text-[10px] text-slate-600 uppercase tracking-[0.5em]">&copy; 2024 Guardian Strategic Solutions. Trusted Counsel.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Pilihan Diagnosis (YES/NO)
+        function handleChoice(btn, val) {
+            const parent = btn.parentElement;
+            const questionType = parent.getAttribute('data-q');
+            
+            // UI Toggle
+            parent.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Save to Hidden Input
+            const mapping = {
+                'licensing': 'ans_licensing',
+                'food_safety': 'ans_food_safety',
+                'inspection': 'ans_inspection',
+                'supplier': 'ans_supplier',
+                'complaint': 'ans_complaint'
+            };
+            document.getElementById(mapping[questionType]).value = val;
+
+            // Check if there's any "NO"
+            const allHidden = [
+                document.getElementById('ans_licensing').value,
+                document.getElementById('ans_food_safety').value,
+                document.getElementById('ans_inspection').value,
+                document.getElementById('ans_supplier').value,
+                document.getElementById('ans_complaint').value
+            ];
+            document.getElementById('risk-alert').classList.toggle('hidden', !allHidden.includes('NO'));
+        }
+
+        // Package Selection
+        function selectPackage(name) {
+            document.getElementById('selected_package').value = name;
+            // Visual hint on the form textarea
+            document.getElementsByName('Pesan')[0].placeholder = "Saya tertarik dengan paket " + name + "...";
+        }
+
+        // Formspree AJAX Submission
+        const form = document.getElementById('guardianForm');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('form-status');
+
+            // Cek jika ID masih default
+            if(form.action.includes('id_formspree_anda')) {
+                alert("Mohon ganti 'id_formspree_anda' dengan ID asli dari formspree.io di kode HTML Anda.");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = "SEDANG MENGIRIM...";
+
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                status.classList.remove('hidden');
+                form.reset();
+                document.querySelectorAll('.btn-check').forEach(b => b.classList.remove('active'));
+                btn.innerText = "TERKIRIM";
+            } else {
+                alert("Gagal mengirim pesan. Silakan coba lagi.");
+                btn.disabled = false;
+                btn.innerText = "KIRIM KE TIM GUARDIAN";
+            }
+        };
+    </script>
+</body>
+</html>
