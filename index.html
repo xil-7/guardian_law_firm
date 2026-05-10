@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -102,6 +101,97 @@
             background: #c5a059;
             color: #020617;
         }
+
+        /* ── Contact redesign ── */
+        .contact-hero {
+            background: linear-gradient(135deg, #020c1f 0%, #071530 40%, #0a1a3a 70%, #020c1f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 140%;
+            background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
+            transform: skewX(-15deg);
+            pointer-events: none;
+        }
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cf-input {
+            width: 100%;
+            background: rgba(15, 30, 65, 0.85);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .cf-input::placeholder { color: rgba(148,163,184,0.45); }
+        .cf-input:focus { border-color: rgba(197,160,89,0.5); }
+        .cf-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(148,163,184,0.7);
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        /* ── Pricing cards ── */
+        .pricing-card {
+            background: #0f172a;
+            border: 1px solid rgba(197,160,89,0.15);
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.6);
+        }
+        .pricing-card.featured {
+            border-color: #c5a059;
+            background: linear-gradient(160deg, #111827 0%, #0f172a 100%);
+            box-shadow: 0 0 0 1px #c5a059, 0 20px 60px -10px rgba(197,160,89,0.2);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #c5a059;
+            color: #020617;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 4px 18px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .pricing-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        .pricing-feature i { margin-top: 2px; flex-shrink: 0; }
     </style>
 </head>
 <body class="text-slate-200">
@@ -122,6 +212,7 @@
                     <a href="javascript:void(0)" onclick="showPage('portfolio')" class="hover:text-gold transition">Portofolio</a>
                     <a href="javascript:void(0)" onclick="showPage('audit')" class="hover:text-gold transition">Audit Bisnis</a>
                     <a href="javascript:void(0)" onclick="showPage('faq')" class="hover:text-gold transition">FAQ</a>
+                    <a href="javascript:void(0)" onclick="showPage('pricing')" class="hover:text-gold transition">Paket</a>
                     <a href="javascript:void(0)" onclick="showPage('contact')" class="px-4 py-2 border border-gold rounded text-gold hover:bg-gold hover:text-navy-deep transition">Kontak</a>
                 </div>
             </div>
@@ -150,43 +241,51 @@
     <!-- LAWYERS -->
     <div id="page-lawyers" class="page-content">
         <section class="py-32 bg-navy-deep min-h-screen">
-            <div class="max-w-7xl mx-auto px-4">
+            <div class="max-w-[1400px] mx-auto px-4">
                 <div class="text-center mb-20">
                     <h2 class="text-5xl font-bold text-white mb-4 italic">Our Strategic Leaders</h2>
                     <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Tim Advokat Profesional</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Lawyer 1: Qonita Anindya -->
-                    <div class="card-custom p-5 rounded-2xl flex flex-col">
-                        <img src="237718.jpg" alt="Qonita Anindya, S.H,. LLM." class="lawyer-photo mb-5">
-                        <h4 class="text-gold font-bold uppercase text-[9px] mb-1 tracking-widest">Principal Lawyer</h4>
-                        <h3 class="text-lg font-bold text-white mb-2 leading-tight">Qonita Anindya, S.H., LL.M.</h3>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Spesialis sengketa bisnis internasional dan kepatuhan korporasi global.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <!-- Lawyer 1 -->
+                    <div class="card-custom p-4 rounded-2xl flex flex-col h-full">
+                        <img src="image/Qonita.jpeg" alt="Qonita Anindya" class="lawyer-photo mb-4">
+                        <h4 class="text-gold font-bold uppercase text-[8px] mb-1 tracking-widest">Principal Lawyer</h4>
+                        <h3 class="text-sm font-bold text-white mb-2 leading-tight">Qonita Anindya, S.H., LL.M.</h3>
+                        <p class="text-[10px] text-slate-400 leading-relaxed mt-auto">Spesialis sengketa bisnis internasional dan kepatuhan korporasi global.</p>
                     </div>
 
-                    <!-- Lawyer 2: Maria Angel -->
-                    <div class="card-custom p-5 rounded-2xl flex flex-col">
-                        <img src="237714.jpg" alt="Maria Angel, S.H,. M.H." class="lawyer-photo mb-5">
-                        <h4 class="text-gold font-bold uppercase text-[9px] mb-1 tracking-widest">Founder & Principal</h4>
-                        <h3 class="text-lg font-bold text-white mb-2 leading-tight">Maria Angel, S.H., M.H.</h3>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Pakar hukum UKM dan Startup, fokus pada pondasi legalitas preventif.</p>
+                    <!-- Lawyer 2 -->
+                    <div class="card-custom p-4 rounded-2xl flex flex-col h-full">
+                        <img src="image/Maria.jpeg" alt="Maria Angel" class="lawyer-photo mb-4">
+                        <h4 class="text-gold font-bold uppercase text-[8px] mb-1 tracking-widest">Founder & Principal</h4>
+                        <h3 class="text-sm font-bold text-white mb-2 leading-tight">Maria Angel, S.H., M.H.</h3>
+                        <p class="text-[10px] text-slate-400 leading-relaxed mt-auto">Pakar hukum UKM dan Startup, fokus pada pondasi legalitas preventif.</p>
                     </div>
 
-                    <!-- Lawyer 3: Beverly Suak -->
-                    <div class="card-custom p-5 rounded-2xl flex flex-col">
-                        <img src="237715.jpg" alt="Beverly Suak, S.H,. M.H." class="lawyer-photo mb-5">
-                        <h4 class="text-gold font-bold uppercase text-[9px] mb-1 tracking-widest">Principal Lawyer</h4>
-                        <h3 class="text-lg font-bold text-white mb-2 leading-tight">Beverly Suak, S.H., M.H.</h3>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Ahli hukum komersial dengan fokus strategi perlindungan aset bisnis.</p>
+                    <!-- Lawyer 3 -->
+                    <div class="card-custom p-4 rounded-2xl flex flex-col h-full">
+                        <img src="image/Beverly.jpeg" alt="Beverly Suak" class="lawyer-photo mb-4">
+                        <h4 class="text-gold font-bold uppercase text-[8px] mb-1 tracking-widest">Principal Lawyer</h4>
+                        <h3 class="text-sm font-bold text-white mb-2 leading-tight">Beverly Suak, S.H., M.H.</h3>
+                        <p class="text-[10px] text-slate-400 leading-relaxed mt-auto">Ahli hukum komersial dengan fokus strategi perlindungan aset bisnis.</p>
                     </div>
 
-                    <!-- Lawyer 4: Fadilah Candra Kirana -->
-                    <div class="card-custom p-5 rounded-2xl flex flex-col">
-                        <img src="237716.jpg" alt="Fadilah Candra Kirana, S.H,. M.H." class="lawyer-photo mb-5">
-                        <h4 class="text-gold font-bold uppercase text-[9px] mb-1 tracking-widest">Principal Lawyer</h4>
-                        <h3 class="text-lg font-bold text-white mb-2 leading-tight">Fadilah Candra Kirana, S.H., M.H.</h3>
-                        <p class="text-[11px] text-slate-400 leading-relaxed">Spesialis hukum perburuhan dan mediasi hubungan industrial korporasi.</p>
+                    <!-- Lawyer 4 -->
+                    <div class="card-custom p-4 rounded-2xl flex flex-col h-full">
+                        <img src="image/Candra.jpeg" alt="Fadilah Candra" class="lawyer-photo mb-4">
+                        <h4 class="text-gold font-bold uppercase text-[8px] mb-1 tracking-widest">Principal Lawyer</h4>
+                        <h3 class="text-sm font-bold text-white mb-2 leading-tight">Fadilah Candra K, S.H., M.H.</h3>
+                        <p class="text-[10px] text-slate-400 leading-relaxed mt-auto">Spesialis hukum perburuhan dan mediasi hubungan industrial korporasi.</p>
+                    </div>
+
+                    <!-- Lawyer 5 -->
+                    <div class="card-custom p-4 rounded-2xl flex flex-col h-full">
+                        <img src="image/Savira.jpeg" alt="Savira Aulia" class="lawyer-photo mb-4">
+                        <h4 class="text-gold font-bold uppercase text-[8px] mb-1 tracking-widest">Principal Lawyer</h4>
+                        <h3 class="text-sm font-bold text-white mb-2 leading-tight">Savira Aulia, S.H., M.H.</h3>
+                        <p class="text-[10px] text-slate-400 leading-relaxed mt-auto">Ahli hukum perizinan korporasi dan mitigasi risiko operasional.</p>
                     </div>
                 </div>
             </div>
@@ -202,15 +301,19 @@
                     <p class="text-gold uppercase tracking-[0.3em] text-[10px] font-bold">Portofolio Opini Hukum</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="card-custom rounded-2xl overflow-hidden group">
-                        <img src="237705.jpg" alt="Opini Hukum Roti" class="w-full h-64 object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="card-custom rounded-2xl overflow-hidden group flex flex-col">
+                        <div class="bg-white/5 p-4">
+                            <img src="image/Bakery.jpeg" alt="Opini Hukum Roti" class="w-full h-auto object-contain filter grayscale group-hover:grayscale-0 transition duration-500 rounded-lg">
+                        </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-4">Small-Scale Bakery Setup</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">Kajian komprehensif mengenai zonasi dan standar keamanan pangan BPOM untuk sektor F&B.</p>
                         </div>
                     </div>
-                    <div class="card-custom rounded-2xl overflow-hidden group">
-                        <img src="237706.jpg" alt="Opini Hukum Sabun Kertas" class="w-full h-64 object-cover filter grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="card-custom rounded-2xl overflow-hidden group flex flex-col">
+                        <div class="bg-white/5 p-4">
+                            <img src="image/Travel.jpeg" alt="Opini Hukum Sabun Kertas" class="w-full h-auto object-contain filter grayscale group-hover:grayscale-0 transition duration-500 rounded-lg">
+                        </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-white mb-4">Travel-Sized Paper Soap Analysis</h3>
                             <p class="text-slate-400 text-sm leading-relaxed">Analisis klasifikasi produk kebersihan portabel berdasarkan regulasi PKRT di Indonesia.</p>
@@ -350,25 +453,237 @@
 
     <!-- KONTAK -->
     <div id="page-contact" class="page-content">
-        <section class="py-32 bg-navy-deep min-h-screen">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-16">
+        <section class="contact-hero min-h-screen flex items-center pt-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full py-20 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                    <!-- LEFT: Headline + contact info -->
                     <div>
-                        <h2 class="text-5xl font-bold text-white mb-6 italic">Hubungi <span class="text-gold">Kami</span></h2>
-                        <p class="text-slate-400 mb-12">Sampaikan kebutuhan hukum bisnis Anda secara mendetail.</p>
+                        <h2 class="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                            Let's Secure<br><span class="italic">Your <em class="text-gold not-italic" style="font-family:'Playfair Display',serif; font-style:italic;">Future</em></span>
+                        </h2>
+                        <p class="text-slate-400 text-base leading-relaxed mb-12 max-w-sm">
+                            Jangan biarkan celah hukum menghambat pertumbuhan bisnis Anda. Hubungi kami untuk perlindungan strategis.
+                        </p>
+
                         <div class="space-y-6">
-                            <p class="text-white font-bold">helloguardianlawfirm@gmail.com</p>
-                            <p class="text-white font-bold">+62 812 3456 7890</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fab fa-whatsapp text-white text-sm"></i>
+                                </div>
+                                <span class="text-white font-semibold text-base">+62 812-3456-7890</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-envelope text-white text-sm"></i>
+                                </div>
+                                <span class="text-white font-semibold text-base">helloguardianlawfirm@gmail.com</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                                </div>
+                                <span class="text-white font-semibold text-base">Jakarta, Indonesia</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-navy-muted p-10 rounded-3xl border border-gold/20 shadow-2xl">
-                        <form action="mailto:helloguardianlawfirm@gmail.com" method="post" enctype="text/plain" class="space-y-6">
-                            <input type="text" name="name" placeholder="Nama / Nama Perusahaan" class="input-contact" required>
-                            <textarea name="problem" rows="5" placeholder="Ringkasan permasalahan atau kebutuhan hukum..." class="input-contact resize-none" required></textarea>
-                            <button type="submit" class="w-full btn-gold py-5 rounded-2xl font-bold uppercase tracking-widest text-xs">Kirim Pesan Sekarang</button>
+
+                    <!-- RIGHT: Form -->
+                    <div>
+                        <form action="#" class="space-y-4">
+                            <!-- Row 1: Nama + Perusahaan -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="cf-label">Nama</label>
+                                    <input type="text" name="name" class="cf-input" placeholder="Nama lengkap" required>
+                                </div>
+                                <div>
+                                    <label class="cf-label">Perusahaan</label>
+                                    <input type="text" name="company" class="cf-input" placeholder="Nama perusahaan">
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Email Kerja -->
+                            <div>
+                                <label class="cf-label">Email Kerja</label>
+                                <input type="email" name="email" class="cf-input" placeholder="email@perusahaan.com" required>
+                            </div>
+
+                            <!-- Row 3: Pesan Anda -->
+                            <div>
+                                <label class="cf-label">Pesan Anda</label>
+                                <textarea name="message" rows="5" class="cf-input resize-none" placeholder="Ceritakan singkat kebutuhan hukum Anda..." required></textarea>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <button type="submit" class="w-full bg-[#c5a059] hover:bg-[#d4b476] text-[#020617] py-4 rounded font-bold uppercase tracking-[0.25em] text-[11px] transition-all duration-300 shadow-lg shadow-gold/20 hover:-translate-y-0.5 mt-2">
+                                Kirim Permintaan Konsultasi
+                            </button>
                         </form>
                     </div>
+
                 </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRICING & PACKAGES -->
+    <div id="page-pricing" class="page-content">
+        <section class="py-32 bg-navy-muted min-h-screen">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-20">
+                    <div class="inline-block px-4 py-1 border border-gold/30 rounded-full mb-6 bg-gold/5">
+                        <span class="text-gold text-[10px] font-bold uppercase tracking-[0.4em]">Transparent Pricing</span>
+                    </div>
+                    <h2 class="text-5xl font-bold text-white mb-4 italic">Pricing &amp; Packages</h2>
+                    <p class="text-slate-400 max-w-lg mx-auto text-sm leading-relaxed">Pilih paket yang sesuai dengan tahap pertumbuhan bisnis Anda. Setiap paket dirancang untuk memberikan kepastian hukum yang nyata.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+                    <!-- BRONZE -->
+                    <div class="pricing-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:rgba(180,100,40,0.15);">
+                                <i class="fas fa-shield-alt" style="color:#cd7f32; font-size:16px;"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.3em] font-bold" style="color:#cd7f32;">Package 01</p>
+                                <h3 class="text-white font-bold text-lg leading-none">Bronze</h3>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-400 text-xs mb-6 italic">Essential Foundations</p>
+
+                        <div class="mb-8">
+                            <span class="text-white text-4xl font-bold">IDR 2,5 Jt</span>
+                            <span class="text-slate-500 text-xs ml-1">/ paket</span>
+                        </div>
+
+                        <ul class="space-y-3 mb-10 flex-1">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#cd7f32;"></i>
+                                <span>1 Konsultasi hukum (Guardian level)</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#cd7f32;"></i>
+                                <span>Penyusunan kontrak dasar (1 dokumen)</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#cd7f32;"></i>
+                                <span>Konsultasi BPOM &amp; halal dasar</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#cd7f32;"></i>
+                                <span>1 Sesi konsultasi bersama</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="showPage('contact')" class="w-full py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-[10px] border transition-all duration-300 hover:-translate-y-0.5" style="border-color:#cd7f32; color:#cd7f32; background:rgba(180,100,40,0.08);">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- SILVER (FEATURED) -->
+                    <div class="pricing-card featured" style="margin-top:-12px; margin-bottom:-12px;">
+                        <div class="pricing-badge">⭐ Most Popular</div>
+
+                        <div class="flex items-center gap-3 mb-6 mt-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:rgba(197,160,89,0.15);">
+                                <i class="fas fa-star" style="color:#c5a059; font-size:16px;"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-gold">Package 02</p>
+                                <h3 class="text-white font-bold text-lg leading-none">Silver</h3>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-400 text-xs mb-6 italic">Strategic Partnership</p>
+
+                        <div class="mb-8">
+                            <span class="text-white text-4xl font-bold">IDR 3,5 Jt</span>
+                            <span class="text-slate-500 text-xs ml-1">/ paket</span>
+                        </div>
+
+                        <!-- Key selling point callout -->
+                        <div class="mb-6 p-3 rounded-lg border" style="border-color:rgba(197,160,89,0.3); background:rgba(197,160,89,0.06);">
+                            <p class="text-[10px] text-gold leading-relaxed"><i class="fas fa-lightbulb mr-1"></i> Guardian menjadi <strong>strategic advisor</strong> Anda — bukan sekadar penyedia dokumen.</p>
+                        </div>
+
+                        <ul class="space-y-3 mb-10 flex-1">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Sesi legal confession</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Review + penyusunan kontrak</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Konsultasi BPOM &amp; halal dasar</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>Saran strukturisasi pajak</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle text-gold"></i>
+                                <span>2 Sesi tindak lanjut</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="showPage('contact')" class="btn-gold w-full py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 shadow-lg shadow-gold/20 hover:-translate-y-0.5">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- DIAMOND -->
+                    <div class="pricing-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:rgba(147,197,253,0.1);">
+                                <i class="fas fa-gem" style="color:#93c5fd; font-size:16px;"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.3em] font-bold" style="color:#93c5fd;">Package 03</p>
+                                <h3 class="text-white font-bold text-lg leading-none">Diamond</h3>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-400 text-xs mb-6 italic">Total Compliance &amp; Growth</p>
+
+                        <div class="mb-8">
+                            <span class="text-white text-4xl font-bold">IDR 4 Jt</span>
+                            <span class="text-slate-500 text-xs ml-1">/ bulan</span>
+                        </div>
+
+                        <ul class="space-y-3 mb-10 flex-1">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#93c5fd;"></i>
+                                <span>2–3 Konsultasi hukum per bulan</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#93c5fd;"></i>
+                                <span>Review kontrak komprehensif</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#93c5fd;"></i>
+                                <span>Advisory pajak dasar</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check-circle" style="color:#93c5fd;"></i>
+                                <span>Pemantauan kepatuhan berkelanjutan</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="showPage('contact')" class="w-full py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-[10px] border transition-all duration-300 hover:-translate-y-0.5" style="border-color:#93c5fd; color:#93c5fd; background:rgba(147,197,253,0.06);">
+                            Get Started
+                        </button>
+                    </div>
+
+                </div>
+
+                <p class="text-center text-slate-600 text-[10px] uppercase tracking-widest mt-16">Semua paket dapat dikustomisasi sesuai kebutuhan bisnis Anda &mdash; hubungi kami untuk diskusi lebih lanjut.</p>
             </div>
         </section>
     </div>
@@ -393,5 +708,3 @@
     </script>
 </body>
 </html>
-
-```
